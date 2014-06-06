@@ -7,5 +7,5 @@ Feature: staring blankly at the worlds most boring welcome page
     
   Scenario: A User should be able to see almost bugger all on the About page
     Given I am on the static_pages about page
-    Then I should be see "About Us"
+    Then I should be see "About Us The Ruby"
 
