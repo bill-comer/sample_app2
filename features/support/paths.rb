@@ -16,6 +16,8 @@ module NavigationHelpers
       '/'
     when /the static_pages help page/
       '/static_pages/help'
+    when /the static_pages home page/
+      '/static_pages/home'
     end
   end
 end
