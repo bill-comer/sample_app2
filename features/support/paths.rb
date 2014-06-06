@@ -18,6 +18,8 @@ module NavigationHelpers
       '/static_pages/help'
     when /the static_pages home page/
       '/static_pages/home'
+    when /the static_pages about page/
+      '/static_pages/about'
     end
   end
 end
