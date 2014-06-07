@@ -9,3 +9,8 @@ Feature: staring blankly at the worlds most boring welcome page
     Given I am on the static_pages about page
     Then I should be see "About Us The Ruby"
 
+    
+  Scenario: A User should be able to see Contact page
+    Given I am on the static_pages contact page
+    Then I should be see "Contact Contact Ruby on Rails Tutorial about the sample app at the"
+
