@@ -16,10 +16,13 @@ module NavigationHelpers
       '/'
     when /the static_pages help page/
       '/static_pages/help'
+      
     when /the static_pages home page/
       '/static_pages/home'
+      
     when /the static_pages about page/
       '/static_pages/about'
+      
     when /the static_pages contact page/
       '/static_pages/contact'
     end
