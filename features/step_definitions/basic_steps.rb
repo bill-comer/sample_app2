@@ -10,7 +10,7 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-Then(/^I should see "(.*?)"$/) do |arg1|
-  page.should have_text(arg1)
+Then(/^I should see "(.*?)"$/) do |content|
+  page.should have_text(content)
 end
 
