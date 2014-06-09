@@ -73,4 +73,16 @@ describe User do
     it { should_not be_valid }
   end
   
+  describe "email is saved as lowercase" do
+    before do
+      @user.email = "USER@FOO.COM"
+      @user.save
+    end
+      
+      @user = User.find_by_email('user@foo.com')
+      it { should be_valid }
+      its(:name){ should == "Example User" }
+      its(:email){ should == "user@foo.com" }
+  end
+  
 end
