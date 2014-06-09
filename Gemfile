@@ -41,6 +41,7 @@ gem 'tzinfo-data'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'  
+  gem 'rspec-its'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 end
