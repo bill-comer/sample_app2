@@ -5,6 +5,8 @@ Feature: staring blankly at the worlds most boring welcome page
     Given I am on the static_pages help page
     Then I should see "Help Get help on the Ruby on Rails Tutorial"
     And I should see a title "Ruby on Rails Tutorial Sample App"
+    And I click on link the static_pages about page
+    Then I should see "About Us The Ruby"
 
 
   Scenario: A User should be able to see the home page

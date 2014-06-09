@@ -14,3 +14,6 @@ Then(/^I should see "(.*?)"$/) do |content|
   page.should have_text(content)
 end
 
+And /^(?:|I )click on link (.+)$/ do |link|
+  visit path_to(link)
+end
