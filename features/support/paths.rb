@@ -29,6 +29,9 @@ module NavigationHelpers
     when /the static_pages contact page/
       contact_path
       
+    when /the signup page/
+      signup_path
+      
     end
   end
 end
