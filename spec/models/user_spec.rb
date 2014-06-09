@@ -21,4 +21,16 @@ describe User do
     it { should_not be_valid }
   end
   
+  describe "when name is too short, must be atleast 5 " do
+    before { @user.name = "a" * 4 }
+    it { should_not be_valid }
+  end
+  
+  
+  describe "spaces is not a valid username" do
+    before { @user.name = "       "}
+    it { should_not be_valid }
+  end
+  
+  
 end
