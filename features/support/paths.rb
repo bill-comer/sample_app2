@@ -9,22 +9,22 @@ module NavigationHelpers
     case page_name
 
     when /the home\s?page/
-      '/'
+      root_path
     when /the front-page/
-      '/'
+      root_path
     when /the welcome page/
-      '/'
+      root_path
     when /the static_pages help page/
-      '/static_pages/help'
+      help_path
       
     when /the static_pages home page/
-      '/static_pages/home'
+      root_path
       
     when /the static_pages about page/
-      '/static_pages/about'
+      about_path
       
     when /the static_pages contact page/
-      '/static_pages/contact'
+      contact_path
     end
   end
 end
