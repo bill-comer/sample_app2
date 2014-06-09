@@ -18,6 +18,10 @@ Feature: staring blankly at the worlds most boring welcome page
   Scenario: A User should be able to see the About page
     Given I am on the static_pages about page
     Then I should see "About Us The Ruby"
+    
+  Scenario: A User should be able to see the About page with a title
+    Given I am on the static_pages about page
+    Then I should see a title "Ruby on Rails Tutorial Sample App"
 
     
   Scenario: A User should be able to see Contact page
@@ -25,3 +29,6 @@ Feature: staring blankly at the worlds most boring welcome page
     Then I should see "Contact Contact Ruby on Rails Tutorial about the sample app at the"
 
  
+  Scenario: A User should be able to see the Contact page with a title
+    Given I am on the static_pages contact page
+    Then I should see a title "Ruby on Rails Tutorial Sample App"
