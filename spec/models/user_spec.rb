@@ -73,7 +73,7 @@ describe User do
     it { should_not be_valid }
   end
   
-  describe "email is saved as lowercase" do
+  describe "ensure email is saved as lowercase" do
     before do
       @user.email = "USER@FOO.COM"
       @user.save
