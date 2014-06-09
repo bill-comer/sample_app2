@@ -15,5 +15,5 @@ Then(/^I should see "(.*?)"$/) do |content|
 end
 
 And /^(?:|I )click on link (.+)$/ do |link|
-  visit path_to(link)
+  click_link (link)
 end
