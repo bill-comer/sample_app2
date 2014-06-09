@@ -10,10 +10,13 @@ module NavigationHelpers
 
     when /the home\s?page/
       root_path
+      
     when /the front-page/
       root_path
+      
     when /the welcome page/
       root_path
+      
     when /the static_pages help page/
       help_path
       
@@ -25,6 +28,7 @@ module NavigationHelpers
       
     when /the static_pages contact page/
       contact_path
+      
     end
   end
 end
