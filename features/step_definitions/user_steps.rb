@@ -1,4 +1,3 @@
-#require 'test/factories/factories.rb'
 require 'factory_girl_rails'
 
 
