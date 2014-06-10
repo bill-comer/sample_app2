@@ -17,3 +17,7 @@ end
 And /^(?:|I )click on link (.+)$/ do |link|
   click_link (link)
 end
+
+Given /^(?:|I )am showing (.+)$/ do |page_name|
+  visit show_path_to(page_name)
+end

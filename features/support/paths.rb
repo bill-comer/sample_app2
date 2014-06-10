@@ -5,6 +5,13 @@ module NavigationHelpers
   #
   # step definition in web_steps.rb
   #
+  def show_path_to(page_name)
+    case page_name
+    when /the user_profile page/
+      user_path(@new_user)
+    end
+  end
+  
   def path_to(page_name)
     case page_name
 
@@ -31,6 +38,10 @@ module NavigationHelpers
       
     when /the signup page/
       signup_path
+      
+      
+    when /the user_profile page/
+      user_path
       
     end
   end

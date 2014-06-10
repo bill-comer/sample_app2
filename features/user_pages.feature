@@ -1,7 +1,15 @@
-Feature: user pagess
+Feature: user pages
 
 
   Scenario: A new user wants to sign up
     Given I am on the signup page 
-    And I should see a title "Ruby on Rails Tutorial Sample App"
     Then I should see "Sign up"
+    And I should see a title "Ruby on Rails Tutorial Sample App"
+
+  Scenario: An existing user profile page
+    Given I am an existing user 
+    Given I am showing the user_profile page 
+    Then I should see "Michael Hartl"
+    And I should see a title "Sample App"
+
+   

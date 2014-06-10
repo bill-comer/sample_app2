@@ -50,6 +50,8 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'factory_girl_rails', '~> 4.2.1'
+  #gem 'factory_girl'
 end
 
 
