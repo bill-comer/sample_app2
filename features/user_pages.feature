@@ -10,6 +10,6 @@ Feature: user pages
     Given I am an existing user 
     Given I am showing the user_profile page 
     Then I should see "foo@example.com"
-    And I should see a title "Sample App"
+    And I should see a title "foo Hartl"
 
    
