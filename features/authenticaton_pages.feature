@@ -4,4 +4,5 @@ Feature: authentication pages
     Given I am on the signin page
     Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see "Sign in"
+    And I should see the signin fields
     

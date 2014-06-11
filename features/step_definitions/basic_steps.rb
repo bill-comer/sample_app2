@@ -29,3 +29,11 @@ end
 Given /^(?:|I )am showing (.+)$/ do |page_name|
   visit show_path_to(page_name)
 end
+
+And /^(?:|there )should be a button (.+)$/ do |button_name|
+  find_button (button_name)
+end
+
+And /^(?:|there )should be a link (.+)$/ do |button_name|
+  find_link (button_name)
+end
