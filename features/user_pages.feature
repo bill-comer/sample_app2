@@ -27,6 +27,7 @@ Feature: user pages
     And I should see "Name can't be blank"
     And I should see "Name is too short (minimum is 5 characters)"
     And I should see the user fields
+    And the Email field should have "foo.bar@foobar.com"
     
  
 

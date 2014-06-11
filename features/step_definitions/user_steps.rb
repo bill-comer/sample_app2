@@ -1,5 +1,9 @@
 require 'factory_girl_rails'
 
+And(/^the Email field should have "(.*?)"$/) do |field_value|
+  find_field('Email').value.should eq field_value
+end
+
 And /^(?:|I )fill in all user fields except name$/ do
   fill_in 'Email', :with => 'foo.bar@foobar.com'
   fill_in 'Password', :with => 'foobar123'
