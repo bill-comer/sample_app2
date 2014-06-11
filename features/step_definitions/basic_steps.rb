@@ -6,8 +6,12 @@ Then(/^I should see a title "(.*?)"$/) do |title|
    page.should have_title(title) 
 end
 
-Then(/^I should see an alert message "(.*?)"$/) do |message|
+Then(/^I should see an alert success message "(.*?)"$/) do |message|
    page.should have_selector('div.alert.alert-success', text: message) 
+end
+
+Then(/^I should see an alert error message "(.*?)"$/) do |message|
+   page.should have_selector('div.alert.alert-error', text: message) 
 end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
@@ -36,4 +40,9 @@ end
 
 And /^(?:|there )should be a link (.+)$/ do |button_name|
   find_link (button_name)
+end
+
+
+And /^(?:|I )click on the button (.+)$/ do |button_name|
+  click_button (button_name)
 end
