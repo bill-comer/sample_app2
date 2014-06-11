@@ -15,6 +15,7 @@ Feature: user pages
     And I should see "Password is too short (minimum is 6 characters)"
     And I should see "Password can't be blank"
     And I should see the user fields
+    And I should not see "Signup Successful. Welcome to the Sample App"
     
   Scenario: A new user wants to sign up with NO NAME parameter & fails
     Given I am on the signup page 
@@ -29,6 +30,7 @@ Feature: user pages
     And I should see the user fields
     And the Email field should have "foo.bar@foobar.com"
     And the Name field should have ""
+    And I should not see "Signup Successful. Welcome to the Sample App"
     
     
     
@@ -38,6 +40,7 @@ Feature: user pages
     And I should see the user fields
     And I fill in all the user fields
     And I click on the button Create my account
+    Then I should see "Signup Successful. Welcome to the Sample App"
     Then I should see "foo.bar@foobar.com"
     And I should see a title "Ruby on Rails Tutorial Sample App | Foo Bar"
  

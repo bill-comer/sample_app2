@@ -14,6 +14,10 @@ Then(/^I should see "(.*?)"$/) do |content|
   page.should have_text(content)
 end
 
+Then(/^I should not see "(.*?)"$/) do |content|
+  page.should_not have_text(content)
+end
+
 And /^(?:|I )click on link (.+)$/ do |link|
   click_link (link)
 end
