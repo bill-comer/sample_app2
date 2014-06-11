@@ -6,6 +6,10 @@ Then(/^I should see a title "(.*?)"$/) do |title|
    page.should have_title(title) 
 end
 
+Then(/^I should see an alert message "(.*?)"$/) do |message|
+   page.should have_selector('div.alert.alert-success', text: message) 
+end
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
