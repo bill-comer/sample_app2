@@ -1,5 +1,11 @@
 require 'factory_girl_rails'
 
+And /^(?:|I )fill in all user fields except name$/ do
+  fill_in 'Email', :with => 'foo.bar@foobar.com'
+  fill_in 'Password', :with => 'foobar123'
+  fill_in 'Confirmation', :with => 'foobar123'
+end
+
 And /^(?:|I )should see the user fields$/ do 
   steps %{
   And there should be a button Create my account

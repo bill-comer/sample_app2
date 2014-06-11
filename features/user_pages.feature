@@ -16,6 +16,18 @@ Feature: user pages
     And I should see "Password can't be blank"
     And I should see the user fields
     
+  Scenario: A new user wants to sign up with NO NAME parameter & fails
+    Given I am on the signup page 
+    Then I should see a title "Ruby on Rails Tutorial Sample App | Sign up"
+    And I should see the user fields
+    And I fill in all user fields except name
+    And I click on the button Create my account
+    And I should see a title "Ruby on Rails Tutorial Sample App | Sign up"
+    And I should see "The form contains 2 errors"
+    And I should see "Name can't be blank"
+    And I should see "Name is too short (minimum is 5 characters)"
+    And I should see the user fields
+    
  
 
   Scenario: An existing user profile page
