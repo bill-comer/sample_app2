@@ -43,6 +43,9 @@ module NavigationHelpers
     when /the user_profile page/
       user_path
       
+    when /the signin page/
+      signin_path
+      
     end
   end
 end
