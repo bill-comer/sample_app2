@@ -30,6 +30,16 @@ Feature: user pages
     And the Email field should have "foo.bar@foobar.com"
     And the Name field should have ""
     
+    
+    
+  Scenario: A new user wants to sign up with valid parameter & works OK
+    Given I am on the signup page 
+    Then I should see a title "Ruby on Rails Tutorial Sample App | Sign up"
+    And I should see the user fields
+    And I fill in all the user fields
+    And I click on the button Create my account
+    Then I should see "foo.bar@foobar.com"
+    And I should see a title "Ruby on Rails Tutorial Sample App | Foo Bar"
  
 
   Scenario: An existing user profile page

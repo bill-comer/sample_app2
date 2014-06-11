@@ -8,8 +8,11 @@ And(/^the Name field should have "(.*?)"$/) do |field_value|
   find_field('Name').value.should eq field_value
 end
 
-And(/^the Password field should have "(.*?)"$/) do |field_value|
-  find_field('Password').value.should eq field_value
+And /^(?:|I )fill in all the user fields$/ do
+  fill_in 'Name', :with => 'Foo Bar'
+  fill_in 'Email', :with => 'foo.bar@foobar.com'
+  fill_in 'Password', :with => 'foobar123'
+  fill_in 'Confirmation', :with => 'foobar123'
 end
 
 
