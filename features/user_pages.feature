@@ -1,14 +1,10 @@
 Feature: user pages
 
 
-  Scenario: A new user wants to sign up with no parameters
+  Scenario: A new user wants to sign up with no parameters & fails
     Given I am on the signup page 
     Then I should see a title "Ruby on Rails Tutorial Sample App | Sign up"
-    And there should be a button Create my account
-    And there should be a field Name
-    And there should be a field Email
-    And there should be a field Password
-    And there should be a field Confirmation
+    And I should see the user fields
     And I click on the button Create my account
     And I should see a title "Ruby on Rails Tutorial Sample App | Sign up"
     And I should see "The form contains 6 errors"
@@ -18,6 +14,7 @@ Feature: user pages
     And I should see "Email is invalid"
     And I should see "Password is too short (minimum is 6 characters)"
     And I should see "Password can't be blank"
+    And I should see the user fields
     
  
 
