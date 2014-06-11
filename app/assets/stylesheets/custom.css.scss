@@ -62,6 +62,18 @@ p {
   line-height: 1.7em;
 }
 
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
 
 /* header */
 
@@ -109,6 +121,11 @@ aside {
   margin-right: 10px;
 }
 
+
+
+
+
+
 /* footer */
 
 footer {
@@ -143,3 +160,4 @@ footer {
   @include box_sizing;
 }
 }
+

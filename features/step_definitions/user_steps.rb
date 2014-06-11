@@ -7,7 +7,7 @@ Given /^I am an existing user$/ do
 end
 
 And /^(?:|there )should be a button (.+)$/ do |button_name|
-  find_link (button_name)
+  find_button (button_name)
 end
 
 And /^(?:|there )should be a field (.+)$/ do |button_name|

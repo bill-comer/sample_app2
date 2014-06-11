@@ -4,8 +4,11 @@ Feature: user pages
   Scenario: A new user wants to sign up
     Given I am on the signup page 
     Then I should see a title "Ruby on Rails Tutorial Sample App"
-    And there should be a button Sign me up
+    And there should be a button Create my account
     And there should be a field Name
+    And there should be a field Email
+    And there should be a field Password
+    And there should be a field Confirmation
 
   Scenario: An existing user profile page
     Given I am an existing user 
