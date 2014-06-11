@@ -3,8 +3,9 @@ Feature: user pages
 
   Scenario: A new user wants to sign up
     Given I am on the signup page 
-    Then I should see "Sign up"
-    And I should see a title "Ruby on Rails Tutorial Sample App"
+    Then I should see a title "Ruby on Rails Tutorial Sample App"
+    And there should be a button Sign me up
+    And there should be a field Name
 
   Scenario: An existing user profile page
     Given I am an existing user 
