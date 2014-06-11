@@ -1,7 +1,7 @@
 Feature: user pages
 
 
-  Scenario: A new user wants to sign up
+  Scenario: A new user wants to sign up with no parameters
     Given I am on the signup page 
     Then I should see a title "Ruby on Rails Tutorial Sample App"
     And there should be a button Create my account
@@ -9,6 +9,7 @@ Feature: user pages
     And there should be a field Email
     And there should be a field Password
     And there should be a field Confirmation
+    And I click on the button Create my account
 
   Scenario: An existing user profile page
     Given I am an existing user 
