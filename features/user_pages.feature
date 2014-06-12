@@ -50,5 +50,15 @@ Feature: user pages
     Given I am showing the user_profile page 
     Then I should see "foo Hartl, foo@example.com"
     And I should see a title "foo Hartl"
+    
+  Scenario: An existing user can edit his page
+    Given I am an existing user 
+    And I am visiting the user_edit page
+    And I should see a title "Edit user"
+    And there should be a link change
+    And I should see the user edit fields
+    And there should be a button Save changes
+    And the "Name" field should contain "foo"
+    And the "Email" field should contain "foo@example.com"
 
    

@@ -50,3 +50,8 @@ end
 And /^(?:|I )click on the button (.+)$/ do |button_name|
   click_button (button_name)
 end
+
+And /^the "([^\"]*)" field should contain "([^\"]*)"$/ do |field, value|
+  field_labeled(field).value.should =~ /#{value}/
+end
+
