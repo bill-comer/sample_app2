@@ -10,3 +10,15 @@ Feature: authentication pages
     And I should see an alert error message "Invalid email/password combination"
     
     
+  Scenario: Visiting the Sign in page & sign up valid email & pwd
+    Given I am an existing user
+    Given I am on the signin page
+    Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
+    And I should see "Sign in"
+    And I should see the signin fields
+    And I fill in correctly all the signin fields
+    And I click on the button Sign in
+    And I should see a title "Ruby on Rails Tutorial Sample App | foo Hartl"
+    And I should see "foo@example.com"
+    
+    
