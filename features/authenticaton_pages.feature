@@ -71,7 +71,7 @@ Feature: authentication pages
     And I click on the button Sign in
     And I should see a title "Ruby on Rails Tutorial Sample App | foo Hartl"
     And I should see "foo@example.com"
-    And there should be a link Sign out
+    And there should be authenticated links
     And I click on link Sign out
     Then I should see "Sample App This is the home page for the"
     And I should see a title "Ruby on Rails Tutorial Sample App"

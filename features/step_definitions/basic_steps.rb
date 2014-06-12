@@ -55,3 +55,4 @@ And /^the "([^\"]*)" field should contain "([^\"]*)"$/ do |field, value|
   field_labeled(field).value.should =~ /#{value}/
 end
 
+

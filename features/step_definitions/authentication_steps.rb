@@ -32,3 +32,10 @@ And /^(?:|I )fill in correctly signin but email is in capitals fields$/ do
   fill_in 'Password', :with => 'foobar123'
 end
 
+And /^there should be authenticated links$/ do  ||
+  steps %{
+    And there should be a link Profile
+    And there should be a link Settings
+    And there should be a link Sign out
+  }
+end
