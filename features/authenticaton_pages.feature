@@ -8,7 +8,8 @@ Feature: authentication pages
     And I click on the button Sign in
     And I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see an alert error message "Invalid email/password combination"
- 
+    And I am on the signup page
+    And I should no longer see the error message
  
   Scenario: Visiting the Sign in page & sign up with Ok email BUT invalid pwd
     Given I am an existing user
