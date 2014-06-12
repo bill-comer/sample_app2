@@ -31,3 +31,4 @@ And /^(?:|I )fill in correctly signin but email is in capitals fields$/ do
   fill_in 'Email', :with => 'FOO@EXAMPLE.COM'
   fill_in 'Password', :with => 'foobar123'
 end
+
