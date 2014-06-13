@@ -70,6 +70,13 @@ And /^(?:|I )should see the user edit fields$/ do  ||
   }
 end
 
+
+And /^(?:|I )should see a link for each user$/ do  ||
+  User.all().each do |user|   #{ |a| a[:href] }
+    find_link (user.name)
+  end
+end
+
 And /^I am signed in$/ do 
   sign_in @new_user
 end

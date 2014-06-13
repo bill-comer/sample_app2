@@ -123,3 +123,4 @@ Feature: user pages
     And I am signed in
     And I am visiting the user_index page
     And I should see a title "Ruby on Rails Tutorial Sample App | All users"
+    And I should see a link for each user
