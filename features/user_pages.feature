@@ -46,11 +46,21 @@ Feature: user pages
     
  
 
-  Scenario: An existing user profile page
+  Scenario: An existing user profile page, AND signed in
     Given I am an existing user 
+    And I am signed in
     Given I am showing the user_profile page 
     Then I should see "foo Hartl, foo@example.com"
     And I should see a title "foo Hartl"
+    
+    
+  Scenario: An existing user profile page, but not signed in
+    Given I am an existing user 
+    Given I am showing the user_profile page 
+    Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
+    And I should see "Sign in"
+    And I should see a notice message "Please sign in."
+    
     
   Scenario: An existing user can edit his page & change all his values
     Given I am an existing user 

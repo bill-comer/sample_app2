@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :signed_in_user_before_filter, only: [:edit, :update]
+  before_action :signed_in_user_before_filter, only: [:edit, :update, :show]
   
   def edit
     Rails.logger.info "BILL-Editing"
