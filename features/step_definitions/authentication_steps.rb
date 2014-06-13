@@ -35,6 +35,7 @@ end
 And /^there should be authenticated links$/ do  ||
   steps %{
     And there should be a link Profile
+    And there should be a link Users
     And there should be a link Settings
     And there should be a link Sign out
   }
