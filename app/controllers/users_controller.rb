@@ -54,12 +54,15 @@ class UsersController < ApplicationController
     # Before filters
 
     def signed_in_user_before_filter
-      redirect_to signin_url, notice: "Please sign in." unless signed_in?
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
     end
     
     def correct_user_before_filter
       @user = User.find(params[:id])
-     # redirect_to(root_url) unless current_user?(@user)
+      
       if !current_user?(@user)
         flash[:error] = "You do not have permission to edit the settings for someone else!"
         redirect_to(root_url) 

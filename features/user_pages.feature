@@ -52,12 +52,11 @@ Feature: user pages
     And I should see "Sign in"
     And I should see a notice message "Please sign in."
     
-    Then I fill in correct email but invalid pwd signin fields
+    And I fill in correctly all the signin fields
     And I click on the button Sign in
-    Then I should see an alert success message "Signup Successful. Welcome to the Sample App"
     
+    And I should see a title "Ruby on Rails Tutorial Sample App | foo Hartl"
     Then I should see "foo Hartl, foo@example.com"
-    And I should see a title "foo Hartl"
     
     
   Scenario: An existing user can edit his page & change all his values
