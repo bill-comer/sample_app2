@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   
+  before_action :signed_in_user_before_filter, only: [:edit, :update]
+  
   def edit
     Rails.logger.info "BILL-Editing"
     @user = User.find(params[:id])
@@ -36,7 +38,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Signup Successful. Welcome to the Sample App!"
-      redirect_to @user
+      redirect_to signin_url, notice: "Now sign in please." unless signed_in?
     else
       render 'new'
     end
@@ -46,5 +48,11 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+    
+    # Before filters
+
+    def signed_in_user_before_filter
+      redirect_to signin_url, notice: "Please sign in." unless signed_in?
     end
 end

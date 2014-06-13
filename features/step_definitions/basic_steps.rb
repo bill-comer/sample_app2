@@ -18,6 +18,10 @@ And /^(?:|I )should no longer see the error message$/ do
    page.should_not have_selector('div.alert.alert-error') 
 end
 
+Then(/^I should see a notice message "(.*?)"$/) do |message|
+   page.should have_selector('div.alert.alert-notice', text: message) 
+end
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end

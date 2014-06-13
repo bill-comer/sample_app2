@@ -41,8 +41,9 @@ Feature: user pages
     And I fill in all the user fields
     And I click on the button Create my account
     Then I should see an alert success message "Signup Successful. Welcome to the Sample App"
-    Then I should see "foo.bar@foobar.com"
-    And I should see a title "Ruby on Rails Tutorial Sample App | Foo Bar"
+    And I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
+    And I should see "Sign in"
+    
  
 
   Scenario: An existing user profile page
