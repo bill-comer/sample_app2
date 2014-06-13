@@ -8,8 +8,14 @@ module NavigationHelpers
   def show_path_to(page_name)
     case page_name
       
+    when /the ano user_profile page/
+      user_path(@ano_user)
+      
     when /the user_profile page/
       user_path(@new_user)
+      
+    when /the ano user_edit page/
+      edit_user_path(@ano_user)
       
     when /the user_edit page/
       edit_user_path(@new_user)

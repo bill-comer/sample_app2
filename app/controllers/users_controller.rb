@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   
   before_action :signed_in_user_before_filter, only: [:edit, :update, :show]
+  before_action :correct_user_before_filter,   only: [:edit, :update]
   
   def edit
     Rails.logger.info "BILL-Editing"
@@ -54,5 +55,14 @@ class UsersController < ApplicationController
 
     def signed_in_user_before_filter
       redirect_to signin_url, notice: "Please sign in." unless signed_in?
+    end
+    
+    def correct_user_before_filter
+      @user = User.find(params[:id])
+     # redirect_to(root_url) unless current_user?(@user)
+      if !current_user?(@user)
+        flash[:error] = "You do not have permission to edit the settings for someone else!"
+        redirect_to(root_url) 
+      end
     end
 end
