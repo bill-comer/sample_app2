@@ -56,6 +56,10 @@ And /^I am visiting the user_edit page$/ do
   visit edit_user_path(@new_user)
 end
 
+And /^I am visiting the user_index page$/ do 
+  visit users_path(@new_user)
+end
+
 And /^(?:|I )should see the user edit fields$/ do  ||
   steps %{
   And there should be a button Save changes

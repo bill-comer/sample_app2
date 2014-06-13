@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :signed_in_user_before_filter, only: [:edit, :update, :show]
+  before_action :signed_in_user_before_filter, only: [:edit, :update, :show, :index]
   before_action :correct_user_before_filter,   only: [:edit, :update]
   
   def edit
@@ -43,6 +43,10 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+  
+  def index
+    @users = User.all
   end
   
   private

@@ -115,3 +115,11 @@ Feature: user pages
     And the "Name" field should contain "foo Hartl"
     And the "Email" field should contain "foo@example.com"
     And the "Password" field should be empty
+    
+    
+   Scenario: An existing signed in user sees all users on the index page
+    Given I am an existing user 
+    And create another user
+    And I am signed in
+    And I am visiting the user_index page
+    And I should see a title "Ruby on Rails Tutorial Sample App | All users"

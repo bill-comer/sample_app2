@@ -84,3 +84,12 @@ Feature: authentication pages
     Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see "Sign in"
     And I should see a notice message "Please sign in."
+    
+    
+   
+  Scenario: Visiting the User index page without signing in should send me to the sign in page
+    Given I am an existing user
+    And I am visiting the user_index page
+    Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
+    And I should see "Sign in"
+    And I should see a notice message "Please sign in."
