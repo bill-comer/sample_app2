@@ -15,6 +15,12 @@ And /^(?:|I )fill in all the user fields$/ do
   fill_in 'Confirmation', :with => 'foobar123'
 end
 
+And /^(?:|I )fill in all the user edit fields with new values$/ do
+  fill_in 'Name', :with => 'Foo Bar new'
+  fill_in 'Email', :with => 'foo.bar@foobarnew.com'
+  fill_in 'Password', :with => 'foobar123new'
+  fill_in 'Confirm Password', :with => 'foobar123new'
+end
 
 And /^(?:|I )fill in all user fields except name$/ do
   fill_in 'Email', :with => 'foo.bar@foobar.com'
@@ -53,4 +59,8 @@ And /^(?:|I )should see the user edit fields$/ do  ||
   And there should be a field Password
   And there should be a field Confirm Password
   }
+end
+
+And /^I am signed in$/ do 
+  sign_in @new_user
 end

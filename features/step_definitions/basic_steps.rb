@@ -55,4 +55,8 @@ And /^the "([^\"]*)" field should contain "([^\"]*)"$/ do |field, value|
   field_labeled(field).value.should =~ /#{value}/
 end
 
+And /^the "([^\"]*)" field should be empty$/ do |field|
+  field_labeled(field).value.should == nil
+end
+
 

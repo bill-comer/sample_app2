@@ -51,14 +51,25 @@ Feature: user pages
     Then I should see "foo Hartl, foo@example.com"
     And I should see a title "foo Hartl"
     
-  Scenario: An existing user can edit his page
+  Scenario: An existing user can edit his page & change all his values
     Given I am an existing user 
+    And I am signed in
     And I am visiting the user_edit page
     And I should see a title "Edit user"
     And there should be a link change
     And I should see the user edit fields
     And there should be a button Save changes
-    And the "Name" field should contain "foo"
+    And the "Name" field should contain "foo Hartl"
     And the "Email" field should contain "foo@example.com"
+    And the "Password" field should be empty
+    And the "Confirm Password" field should be empty
+    And I fill in all the user edit fields with new values
+    And I click on the button Save changes
+    And I should see a title "Edit user"
+    And I should see an alert success message "User settings changed."
+    And the "Name" field should contain "Foo Bar new"
+    And the "Email" field should contain "foo.bar@foobarnew.com"
+    And the "Password" field should be empty
+    And the "Confirm Password" field should be empty
 
    
