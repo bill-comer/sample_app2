@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :signed_in_user_before_filter, only: [:edit, :update, :show, :index]
+  before_action :signed_in_user_before_filter, only: [:edit, :update, :show, :index, :destroy]
   before_action :correct_user_before_filter,   only: [:edit, :update]
   
   def edit
@@ -47,6 +47,13 @@ class UsersController < ApplicationController
   
   def index
     @users = User.paginate(page: params[:page], :per_page => 5)
+  end
+  
+  def destroy
+    username = User.find(params[:id]).name
+    User.find(params[:id]).destroy
+    flash[:success] = "User '" + username + "' deleted."
+    redirect_to users_url
   end
   
   private

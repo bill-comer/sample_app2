@@ -117,17 +117,20 @@ Feature: user pages
     And the "Password" field should be empty
     
     
-   Scenario: An existing signed in user sees all users on the index page
+   Scenario: An existing signed in non admin user sees all users on the index page
     Given I am an existing user 
     And create another user
     And I am signed in
     And I am visiting the user_index page
     And I should see a title "Ruby on Rails Tutorial Sample App | All users"
     And I should see a link for each user
+    And I should not see "delete"
     
    Scenario: Test a user can be made an admin user 
     Given I am an existing user 
       And I do not have admin rights
     Then make me an admin
       And I do have admin rights
+    And I am visiting the user_index page
+    #And there should be a link delete
     

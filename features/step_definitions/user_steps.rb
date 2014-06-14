@@ -93,3 +93,4 @@ end
 And /^I do have admin rights$/ do 
  @new_user.admin?.should == true
 end
+
