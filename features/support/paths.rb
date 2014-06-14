@@ -19,6 +19,9 @@ module NavigationHelpers
       
     when /the user_edit page/
       edit_user_path(@new_user)
+    
+    when /anouser from index page/
+      delete user_path(@ano_user)
       
     end
   end

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   
   before_action :signed_in_user_before_filter, only: [:edit, :update, :show, :index, :destroy]
   before_action :correct_user_before_filter,   only: [:edit, :update]
+  before_action :admin_user_before_filter,     only: :destroy
   
   def edit
     Rails.logger.info "BILL-Editing"
@@ -78,5 +79,9 @@ class UsersController < ApplicationController
         flash[:error] = "You do not have permission to edit the settings for someone else!"
         redirect_to(root_url) 
       end
+    end
+    
+    def admin_user_before_filter
+      redirect_to(root_url) unless current_user.admin?
     end
 end

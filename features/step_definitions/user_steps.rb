@@ -94,3 +94,7 @@ And /^I do have admin rights$/ do
  @new_user.admin?.should == true
 end
 
+
+Then /^I am deleting (.+)$/ do |page_name|
+  visit show_path_to(page_name)
+end

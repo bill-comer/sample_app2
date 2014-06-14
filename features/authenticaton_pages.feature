@@ -93,3 +93,11 @@ Feature: authentication pages
     Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see "Sign in"
     And I should see a notice message "Please sign in."
+    
+  Scenario: a non admin user can not delete a user  
+    Given I am an existing user
+    And create another user
+     #Then I am deleting anouser from index page
+     #  And I should see "Sample App This is the home page for the"
+     #  And I should see a title "Ruby on Rails Tutorial Sample App"
+     #  And I should see an alert error message "You do not have permission to delete a user"
