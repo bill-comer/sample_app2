@@ -80,3 +80,16 @@ end
 And /^I am signed in$/ do 
   sign_in @new_user
 end
+
+And /^I do not have admin rights$/ do 
+ @new_user.valid?.should == true
+ @new_user.admin?.should == false
+end
+ 
+Then /^make me an admin$/ do 
+ @new_user.toggle!(:admin)
+end
+ 
+And /^I do have admin rights$/ do 
+ @new_user.admin?.should == true
+end

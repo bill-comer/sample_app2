@@ -124,3 +124,10 @@ Feature: user pages
     And I am visiting the user_index page
     And I should see a title "Ruby on Rails Tutorial Sample App | All users"
     And I should see a link for each user
+    
+   Scenario: Test a user can be made an admin user 
+    Given I am an existing user 
+      And I do not have admin rights
+    Then make me an admin
+      And I do have admin rights
+    
