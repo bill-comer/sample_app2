@@ -64,6 +64,8 @@ GEM
       mime-types (~> 1.16)
       nokogiri (~> 1.5)
       rails (>= 3, < 5)
+    cucumber-the (1.0.0)
+      cucumber (~> 1.2)
     database_cleaner (1.3.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -238,6 +240,7 @@ DEPENDENCIES
   childprocess
   coffee-rails (~> 4.0.0)
   cucumber-rails
+  cucumber-the
   database_cleaner
   execjs
   factory_girl_rails (~> 4.2.1)
