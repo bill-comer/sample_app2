@@ -83,10 +83,12 @@ Feature: user pages
   Scenario: An existing user when signed in can see his profile page, with two microposts
     Given I am an existing user 
       And I have a micropost "my first micropost"
+      And I have a micropost "my second micropost"
       And I am signed in
     Given I am showing the user_profile page 
     Then I should see "foo Hartl, foo@example.com"
       And I should see a title "foo Hartl"
+      And I should see "Microposts"
       And I can see my micropost "my first micropost"
       And I can see my micropost "my second micropost"
     
