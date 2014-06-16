@@ -80,12 +80,15 @@ Feature: user pages
     And the "Password" field should be empty
     And the "Confirm Password" field should be empty
 
-  Scenario: An existing user when signed in can see his profile page
+  Scenario: An existing user when signed in can see his profile page, with two microposts
     Given I am an existing user 
-    And I am signed in
+      And I have a micropost "my first micropost"
+      And I am signed in
     Given I am showing the user_profile page 
     Then I should see "foo Hartl, foo@example.com"
-    And I should see a title "foo Hartl"
+      And I should see a title "foo Hartl"
+      And I can see my micropost "my first micropost"
+      And I can see my micropost "my second micropost"
     
    Scenario: An existing user when signed in can see someone elses profile page
     Given I am an existing user 
