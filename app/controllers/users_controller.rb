@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :signed_in_user_before_filter, only: [:edit, :update, :show, :index, :destroy]
+  before_action :signed_in_user, only: [:edit, :update, :show, :index, :destroy]
   before_action :correct_user_before_filter,   only: [:edit, :update]
   before_action :admin_user_before_filter,     only: :destroy
   
@@ -66,13 +66,6 @@ class UsersController < ApplicationController
     
     # Before filters
 
-    def signed_in_user_before_filter
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in."
-      end
-    end
-    
     def correct_user_before_filter
       @user = User.find(params[:id])
       
