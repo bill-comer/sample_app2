@@ -105,8 +105,8 @@ Feature: user pages
     And create another user
     And I am signed in
     And I am showing the ano user_edit page
-    And I should see "Sample App This is the home page for the"
-    And I should see a title "Ruby on Rails Tutorial Sample App"
+    Then I should see "foo Hartl"
+    And there should be a link view my profile
     And I should see an alert error message "You do not have permission to edit the settings for someone else"
    
   Scenario: An existing user when signed in can see his edit page
