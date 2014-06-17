@@ -35,3 +35,4 @@ Feature: microposts pages
         Then I fill in a post "hello, this is a test post"
         And I click on the button Create Post
         And the number of microposts should be "1"
+        And I can see my micropost "hello, this is a test post"
