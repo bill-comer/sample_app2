@@ -57,8 +57,10 @@ Feature: authentication pages
     And I should see the signin fields
     And I fill in correctly all the signin fields
     And I click on the button Sign in
-    And I should see a title "Ruby on Rails Tutorial Sample App | foo Hartl"
-    And I should see "foo@example.com"
+    
+      Then I should see a title "Ruby on Rails Tutorial Sample App"
+      And I should see "foo Hartl"
+      And I should see "Micropost Feed"
     
        
   Scenario: Visiting the Sign in page & sign up valid UPPERCASE email & correct pwd, & then logs out
@@ -69,6 +71,13 @@ Feature: authentication pages
     And I should see the signin fields
     And I fill in correctly signin but email is in capitals fields
     And I click on the button Sign in
+    
+      Then I should see a title "Ruby on Rails Tutorial Sample App"
+      And I should see "foo Hartl"
+      And I should see "Micropost Feed"
+    
+    Then I am showing the user_profile page
+    
     And I should see a title "Ruby on Rails Tutorial Sample App | foo Hartl"
     And I should see "foo@example.com"
     And there should be authenticated links

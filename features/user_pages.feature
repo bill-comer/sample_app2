@@ -55,8 +55,9 @@ Feature: user pages
     And I fill in correctly all the signin fields
     And I click on the button Sign in
     
-    And I should see a title "Ruby on Rails Tutorial Sample App | foo Hartl"
-    Then I should see "foo Hartl, foo@example.com"
+    And I should see a title "Ruby on Rails Tutorial Sample App"
+    And I should see "foo Hartl"
+    And I should see "Micropost Feed"
     
     
   Scenario: An existing user can edit his page & change all his values
