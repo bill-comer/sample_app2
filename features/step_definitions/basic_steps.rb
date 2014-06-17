@@ -34,6 +34,10 @@ Then(/^I should not see "(.*?)"$/) do |content|
   page.should_not have_text(content)
 end
 
+And /^(?:|there )should be a link (.+)$/ do |button_name|
+  find_link (button_name)
+end
+
 And /^(?:|I )click on link (.+)$/ do |link|
   click_link (link)
 end
@@ -46,9 +50,7 @@ And /^(?:|there )should be a button (.+)$/ do |button_name|
   find_button (button_name)
 end
 
-And /^(?:|there )should be a link (.+)$/ do |button_name|
-  find_link (button_name)
-end
+
 
 
 And /^(?:|I )click on the button (.+)$/ do |button_name|

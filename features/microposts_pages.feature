@@ -36,3 +36,8 @@ Feature: microposts pages
         And I click on the button Create Post
         And the number of microposts should be "1"
         And I can see my micropost "hello, this is a test post"
+        And I should see "Micropost Feed"
+        And I should see "1 micropost"
+        And there should be a link delete post
+        And click on link delete post
+          Then I should see "0 microposts"
