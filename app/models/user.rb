@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
   
   def following?(other_user)
-    relationships.find_by(followed_id: other_user.id)
+    followee(other_user)
   end
 
   def follow!(other_user)
@@ -32,6 +32,13 @@ class User < ActiveRecord::Base
   end
   
   def unfollow!(other_user)
-    relationships.find_by(followed_id: other_user.id).destroy
+    followee(other_user).destroy
   end
+  
+  private
+  
+    def followee(other_user)
+      relationships.find_by(followed_id: other_user.id)
+    end
+  
 end              
