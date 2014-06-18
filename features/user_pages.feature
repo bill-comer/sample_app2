@@ -158,7 +158,12 @@ Feature: user pages
     Then I should see a title "Ruby on Rails Tutorial Sample App"
       And I should see "1 followers"
       And I should see "0 following"
-   #   And there should be a link 1 followers
-   #   And there should be a link 0 following
-   #Then click on link 1 followers
+       And there should be a link "1 followers"
+       And there should be a link "0 following"
+   
+     Then click on link "1 followers"
+      And I should see a title "Ruby on Rails Tutorial Sample App | Followers"
+      
+     Then click on link "0 following"
+      And I should see a title "Ruby on Rails Tutorial Sample App | Following"
     
