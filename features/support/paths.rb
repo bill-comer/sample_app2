@@ -23,6 +23,14 @@ module NavigationHelpers
     when /anouser from index page/
       delete user_path(@ano_user)
       
+    
+    when /the followers page/
+      followers_user_path(@new_user)
+      
+    
+    when /the following page/
+      following_user_path(@new_user)
+      
     end
   end
   

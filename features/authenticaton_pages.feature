@@ -5,7 +5,7 @@ Feature: authentication pages
     Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see "Sign in"
     And I should see the signin fields
-    And I click on the button Sign in
+    And I click on the button "Sign in"
     And I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see an alert error message "Invalid email/password combination"
     And I am on the signup page
@@ -18,7 +18,7 @@ Feature: authentication pages
     And I should see "Sign in"
     And I should see the signin fields
     And I fill in correct email but invalid pwd signin fields
-    And I click on the button Sign in
+    And I click on the button "Sign in"
     And I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see an alert error message "Invalid email/password combination"
   
@@ -30,7 +30,7 @@ Feature: authentication pages
     And I should see "Sign in"
     And I should see the signin fields
     And I fill in correct email but uppercase pwd signin fields
-    And I click on the button Sign in
+    And I click on the button "Sign in"
     And I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see an alert error message "Invalid email/password combination"
   
@@ -44,7 +44,7 @@ Feature: authentication pages
     And I should see "Sign in"
     And I should see the signin fields
     And I fill in invalid email but ok pwd signin fields
-    And I click on the button Sign in
+    And I click on the button "Sign in"
     And I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see an alert error message "Invalid email/password combination"
        
@@ -56,7 +56,7 @@ Feature: authentication pages
     And I should see "Sign in"
     And I should see the signin fields
     And I fill in correctly all the signin fields
-    And I click on the button Sign in
+    And I click on the button "Sign in"
     
       Then I should see a title "Ruby on Rails Tutorial Sample App"
       And I should see "foo Hartl"
@@ -70,7 +70,7 @@ Feature: authentication pages
     And I should see "Sign in"
     And I should see the signin fields
     And I fill in correctly signin but email is in capitals fields
-    And I click on the button Sign in
+    And I click on the button "Sign in"
     
       Then I should see a title "Ruby on Rails Tutorial Sample App"
       And I should see "foo Hartl"
@@ -81,10 +81,10 @@ Feature: authentication pages
     And I should see a title "Ruby on Rails Tutorial Sample App | foo Hartl"
     And I should see "foo@example.com"
     And there should be authenticated links
-    And I click on link Sign out
+    And I click on link "Sign out"
     Then I should see "Sample App This is the home page for the"
     And I should see a title "Ruby on Rails Tutorial Sample App"
-    And there should be a link Sign in
+    And there should be a link "Sign in"
    
    
   Scenario: Visiting the User edit page without signing in should send me to the sign in page
@@ -113,3 +113,24 @@ Feature: authentication pages
      #  And I should see "Sample App This is the home page for the"
      #  And I should see a title "Ruby on Rails Tutorial Sample App"
      #  And I should see an alert error message "You do not have permission to delete a user"
+     
+  Scenario: Visiting the following page without signing in should send me to the sign in page
+    Given I am an existing user
+    And I am showing the following page 
+    
+    Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
+    And I should see "Sign in"
+    And I should see a notice message "Please sign in."
+    And I should not see the link "Sign out"
+    And I should not see the link "Profile"
+    And I should not see the link "Settings"
+    
+  Scenario: Visiting the followers page without signing in should send me to the sign in page
+    Given I am an existing user
+    And I am showing the followers page 
+    Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
+    And I should see "Sign in"
+    And I should see a notice message "Please sign in."
+    And I should not see the link "Sign out"
+    And I should not see the link "Profile"
+    And I should not see the link "Settings"

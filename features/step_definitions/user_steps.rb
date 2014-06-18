@@ -30,7 +30,7 @@ end
 
 And /^(?:|I )should see the user fields$/ do  ||
   steps %{
-  And there should be a button Create my account
+  And there should be a button "Create my account"
   And there should be a field Name
   And there should be a field Email
   And there should be a field Password
@@ -53,8 +53,8 @@ And /^create another user$/ do
   puts @ano_user.id
 end
 
-And /^(?:|there )should be a field (.+)$/ do |button_name|
-  find_field (button_name)
+And /^(?:|there )should be a field "(.*?)"$/ do |field_name|
+  find_field (field_name)
 end
 
 And /^I am visiting the user_edit page$/ do 
@@ -67,7 +67,7 @@ end
 
 And /^(?:|I )should see the user edit fields$/ do  ||
   steps %{
-  And there should be a button Save changes
+  And there should be a button "Save changes"
   And there should be a field Name
   And there should be a field Email
   And there should be a field Password

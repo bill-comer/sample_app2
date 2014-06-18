@@ -34,7 +34,7 @@ Then(/^I should not see "(.*?)"$/) do |content|
   page.should_not have_text(content)
 end
 
-And /^(?:|there )should be a link (.+)$/ do |button_name|
+And /^(?:|there )should be a link "(.*?)"$/ do |button_name|
   find_link (button_name)
 end
 
@@ -42,7 +42,7 @@ Then /^I should not see the link "([^\"]*)"$/ do |linked_text|
   page.should_not have_css("a", :text => linked_text)
 end
 
-And /^(?:|I )click on link (.+)$/ do |link_name|
+And /^(?:|I )click on link "(.*?)"$/ do |link_name|
   click_link (link_name)
 end
 
@@ -54,14 +54,14 @@ Given /^(?:|I )am showing (.+)$/ do |page_name|
   visit show_path_to(page_name)
 end
 
-And /^(?:|there )should be a button (.+)$/ do |button_name|
+And /^(?:|there )should be a button "(.*?)"$/ do |button_name|
   find_button (button_name)
 end
 
 
 
 
-And /^(?:|I )click on the button (.+)$/ do |button_name|
+And /^(?:|I )click on the button "(.*?)"$/ do |button_name|
   click_button (button_name)
 end
 

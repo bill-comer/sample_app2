@@ -5,7 +5,7 @@ Feature: user pages
     Given I am on the signup page 
     Then I should see a title "Ruby on Rails Tutorial Sample App | Sign up"
     And I should see the user fields
-    And I click on the button Create my account
+    And I click on the button "Create my account"
     And I should see a title "Ruby on Rails Tutorial Sample App | Sign up"
     And I should see "The form contains 6 errors"
     And I should see "Name can't be blank"
@@ -22,7 +22,7 @@ Feature: user pages
     Then I should see a title "Ruby on Rails Tutorial Sample App | Sign up"
     And I should see the user fields
     And I fill in all user fields except name
-    And I click on the button Create my account
+    And I click on the button "Create my account"
     And I should see a title "Ruby on Rails Tutorial Sample App | Sign up"
     And I should see "The form contains 2 errors"
     And I should see "Name can't be blank"
@@ -39,7 +39,7 @@ Feature: user pages
     Then I should see a title "Ruby on Rails Tutorial Sample App | Sign up"
     And I should see the user fields
     And I fill in all the user fields
-    And I click on the button Create my account
+    And I click on the button "Create my account"
     Then I should see an alert success message "Signup Successful. Welcome to the Sample App"
     And I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see "Sign in"
@@ -53,7 +53,7 @@ Feature: user pages
     And I should see a notice message "Please sign in."
     
     And I fill in correctly all the signin fields
-    And I click on the button Sign in
+    And I click on the button "Sign in"
     
     And I should see a title "Ruby on Rails Tutorial Sample App"
     And I should see "foo Hartl"
@@ -67,15 +67,15 @@ Feature: user pages
     And I am signed in
     And I am visiting the user_edit page
     And I should see a title "Edit user"
-    And there should be a link change
+    And there should be a link "change"
     And I should see the user edit fields
-    And there should be a button Save changes
+    And there should be a button "Save changes"
     And the "Name" field should contain "foo Hartl"
     And the "Email" field should contain "foo@example.com"
     And the "Password" field should be empty
     And the "Confirm Password" field should be empty
     And I fill in all the user edit fields with new values
-    And I click on the button Save changes
+    And I click on the button "Save changes"
     And I should see a title "Edit user"
     And I should see an alert success message "User settings changed."
     And the "Name" field should contain "Foo Bar new"
@@ -109,7 +109,7 @@ Feature: user pages
     And I am signed in
     And I am showing the ano user_edit page
     Then I should see "foo Hartl"
-    And there should be a link view my profile
+    And there should be a link "view my profile"
     And I should see an alert error message "You do not have permission to edit the settings for someone else"
    
   Scenario: An existing user when signed in can see his edit page
@@ -117,9 +117,9 @@ Feature: user pages
     And I am signed in
     And I am visiting the user_edit page
     And I should see a title "Edit user"
-    And there should be a link change
+    And there should be a link "change"
     And I should see the user edit fields
-    And there should be a button Save changes
+    And there should be a button "Save changes"
     And the "Name" field should contain "foo Hartl"
     And the "Email" field should contain "foo@example.com"
     And the "Password" field should be empty
@@ -153,9 +153,12 @@ Feature: user pages
     And I should see a notice message "Please sign in."
     
     Then I fill in correctly all the signin fields
-      And I click on the button Sign in
+      And I click on the button "Sign in"
     
     Then I should see a title "Ruby on Rails Tutorial Sample App"
       And I should see "1 followers"
       And I should see "0 following"
+   #   And there should be a link 1 followers
+   #   And there should be a link 0 following
+   #Then click on link 1 followers
     

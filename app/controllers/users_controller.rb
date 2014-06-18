@@ -1,9 +1,22 @@
 class UsersController < ApplicationController
   
-  before_action :signed_in_user, only: [:edit, :update, :show, :index, :destroy]
+  before_action :signed_in_user, only: [:edit, :update, :show, :index, :destroy, :following, :followers]
   before_action :correct_user_before_filter,   only: [:edit, :update]
   before_action :admin_user_before_filter,     only: :destroy
   
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.followed_users.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
   def edit
     Rails.logger.info "BILL-Editing"
     @user = User.find(params[:id])

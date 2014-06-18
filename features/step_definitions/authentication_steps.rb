@@ -2,8 +2,8 @@ And /^(?:|I )should see the signin fields$/ do
   steps %{
   And there should be a field Email
   And there should be a field Password
-  And there should be a button Sign in
-  And there should be a link Sign up now!
+  And there should be a button "Sign in"
+  And there should be a link "Sign up now!"
   }
 end
 
@@ -34,9 +34,9 @@ end
 
 And /^there should be authenticated links$/ do  ||
   steps %{
-    And there should be a link Profile
-    And there should be a link Users
-    And there should be a link Settings
-    And there should be a link Sign out
+    And there should be a link "Profile"
+    And there should be a link "Users"
+    And there should be a link "Settings"
+    And there should be a link "Sign out"
   }
 end
