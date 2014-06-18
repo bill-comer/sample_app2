@@ -104,6 +104,10 @@ Then /^I am deleting (.+)$/ do |page_name|
   visit show_path_to(page_name)
 end
 
-And /^I have 1 follower$/ do 
+And /^I will follow 1 person$/ do 
  @ano_user.follow!(@new_user)
+end
+
+And /^I have 1 follower$/ do 
+ @new_user.follow!(@ano_user)
 end

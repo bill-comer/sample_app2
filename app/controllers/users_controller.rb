@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
+  
   def edit
     Rails.logger.info "BILL-Editing"
     @user = User.find(params[:id])

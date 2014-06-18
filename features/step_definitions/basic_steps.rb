@@ -34,8 +34,8 @@ Then(/^I should not see "(.*?)"$/) do |content|
   page.should_not have_text(content)
 end
 
-And /^(?:|there )should be a link "(.*?)"$/ do |button_name|
-  find_link (button_name)
+And /^(?:|there )should be a link "(.*?)"$/ do |link_name|
+  find_link (link_name)
 end
 
 Then /^I should not see the link "([^\"]*)"$/ do |linked_text|

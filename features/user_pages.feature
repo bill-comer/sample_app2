@@ -146,7 +146,7 @@ Feature: user pages
   Scenario: A user with 1 follower, but no following
     Given I am an existing user 
     And create another user
-    And I have 1 follower
+    And I will follow 1 person
     And I am showing the user_profile page 
     Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see "Sign in"
@@ -166,4 +166,40 @@ Feature: user pages
       
      Then click on link "0 following"
       And I should see a title "Ruby on Rails Tutorial Sample App | Following"
+      
+  Scenario: following another user
+    Given I am an existing user 
+    And create another user
+    And I am signed in
+      Then I should see "0 followers"
+      And I should see "0 following"
+      
+    Given I am showing the ano user_profile page 
+    Then I should see "Billy Bunter, billy@billy.com"
+    And I should see a title "Billy Bunter"
+    And there should be a button "Follow"
+    And I click on the button "Follow"
+      Then I should see "1 followers"
+      And I should see "0 following"
+      
+    Given I am showing the ano user_profile page 
+    Then I should see "Billy Bunter, billy@billy.com"
+    And I should see a title "Billy Bunter"
+    And there should be a button "Unfollow"
+    And I click on the button "Unfollow"
+      Then I should see "0 followers"
+      And I should see "0 following"
+      
+    
+  Scenario: user has one follower
+    Given I am an existing user 
+    And create another user
+    And I have 1 follower
+    And I am signed in
+      Then I should see "0 followers"
+      And I should see "1 following"
+      
+      
+           
+    
     
