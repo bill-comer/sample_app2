@@ -53,7 +53,7 @@ And /^create another user$/ do
   puts @ano_user.id
 end
 
-And /^(?:|there )should be a field "(.*?)"$/ do |field_name|
+And /^(?:|there )should be a field (.*?)$/ do |field_name|
   find_field (field_name)
 end
 
