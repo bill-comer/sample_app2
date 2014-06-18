@@ -38,8 +38,16 @@ And /^(?:|there )should be a link (.+)$/ do |button_name|
   find_link (button_name)
 end
 
-And /^(?:|I )click on link (.+)$/ do |link|
-  click_link (link)
+Then /^I should not see the link "([^\"]*)"$/ do |linked_text|
+  page.should_not have_css("a", :text => linked_text)
+end
+
+And /^(?:|I )click on link (.+)$/ do |link_name|
+  click_link (link_name)
+end
+
+And /^(?:|I )click on the first link "([^\"]*)"$/ do |link_name|
+  page.all(:link,link_name)[0].click
 end
 
 Given /^(?:|I )am showing (.+)$/ do |page_name|

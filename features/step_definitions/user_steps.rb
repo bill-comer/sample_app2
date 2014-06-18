@@ -43,6 +43,11 @@ Given /^I am an existing user$/ do
   puts @new_user.id
 end
 
+Given /^I am a user with 1 micropost$/ do
+  @new_user = FactoryGirl.create(:user_with_post)
+  puts @new_user.id
+end
+
 And /^create another user$/ do
   @ano_user = FactoryGirl.create(:user, name: "Billy Bunter", email: "billy@billy.com")
   puts @ano_user.id
@@ -97,4 +102,8 @@ end
 
 Then /^I am deleting (.+)$/ do |page_name|
   visit show_path_to(page_name)
+end
+
+And /^I have 1 follower$/ do 
+ @ano_user.follow!(@new_user)
 end

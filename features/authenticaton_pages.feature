@@ -93,6 +93,9 @@ Feature: authentication pages
     Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
     And I should see "Sign in"
     And I should see a notice message "Please sign in."
+    And I should not see the link "Sign out"
+    And I should not see the link "Profile"
+    And I should not see the link "Settings"
     
     
    

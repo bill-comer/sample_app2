@@ -30,3 +30,8 @@ And(/^the number of microposts should be "(.*?)"$/) do |num_posts|
   @new_user.microposts should_not be_nil
   @new_user.microposts.count == num_posts
 end
+
+
+And(/^I have 1 micropost already "(.*?)"$/) do |post_text|
+  FactoryGirl.create(:micropost, user: @new_user, created_at: 1.day.ago)
+end

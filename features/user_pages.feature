@@ -58,6 +58,8 @@ Feature: user pages
     And I should see a title "Ruby on Rails Tutorial Sample App"
     And I should see "foo Hartl"
     And I should see "Micropost Feed"
+    And I should see "0 followers"
+    And I should see "0 following"
     
     
   Scenario: An existing user can edit his page & change all his values
@@ -139,4 +141,21 @@ Feature: user pages
       And I do have admin rights
     And I am visiting the user_index page
     #And there should be a link delete
+    
+    
+  Scenario: A user with 1 follower, but no following
+    Given I am an existing user 
+    And create another user
+    And I have 1 follower
+    And I am showing the user_profile page 
+    Then I should see a title "Ruby on Rails Tutorial Sample App | Sign in"
+    And I should see "Sign in"
+    And I should see a notice message "Please sign in."
+    
+    Then I fill in correctly all the signin fields
+      And I click on the button Sign in
+    
+    Then I should see a title "Ruby on Rails Tutorial Sample App"
+      And I should see "1 followers"
+      And I should see "0 following"
     
